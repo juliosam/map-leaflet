@@ -24,3 +24,11 @@ code {
 .map-map{
   height: 400px;
 }
+
+.btn{
+  z-index: 9;
+  position: absolute;
+  top: 90px;
+  left: 200px;
+
+}
