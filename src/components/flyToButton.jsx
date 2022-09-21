@@ -1,10 +1,8 @@
 import React from 'react'
 
-const FlyToButton = ({map, locations}) => {
-
-   const fly = () => map.flyTo(locations.coords, 10)
-
-  return <button className='btn' onClick={fly}>{locations.name}</button>
+const FlyToButton = ({map, location}) => {
+   const fly = () => map.flyTo(location.coords, 14);
+  return <button className='btn' onClick={fly}>{location.name}</button>
 }
 
 export default FlyToButton

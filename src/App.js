@@ -8,7 +8,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>This is App</h1>
       <MapWindow info={info}/>
       <Fetcher setInfo={setInfo}/>
     </div>

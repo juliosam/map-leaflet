@@ -19,6 +19,12 @@ code {
 
 .map-window{
   background-color: azure;
+  height: 100vh;
+}
+
+.map-window h2{
+  margin-top: 0;
+  padding-top: 20px;
 }
 
 .map-map{
@@ -33,4 +39,5 @@ code {
   background-color: rgb(25, 150, 143);
   border-radius: 5px;
   font-weight: 600;
+  margin-top: 20px;
 }
