@@ -8,7 +8,6 @@ const Fetcher = ({setInfo}) => {
     const res = await fetch('https://jsonplaceholder.typicode.com/users');
     const data = await res.json()
     setInfo(data)
-    console.log(data)
   }
   
   return (
