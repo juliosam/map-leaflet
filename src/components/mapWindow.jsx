@@ -4,6 +4,7 @@ import L from 'leaflet';
 import { Icon } from 'leaflet';
 import { useState} from 'react';
 import FlyToButton from './flyToButton';
+import Search from './search';
 
 ///////////=============usar datos remotos
 delete L.Icon.Default.prototype._getIconUrl;
@@ -46,6 +47,7 @@ const MapWindow = ({info}) => {
   return (
     <div className="map-window">
       <h2>JULIO'S JOURNEY</h2>
+      <Search/>
       <MapContainer center={center.coords} zoom={4} scrollWheelZoom={false} className="map-map" ref={setMap}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
