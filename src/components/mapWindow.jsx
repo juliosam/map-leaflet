@@ -47,7 +47,7 @@ const MapWindow = ({info}) => {
   return (
     <div className="map-window">
       <h2>JULIO'S JOURNEY</h2>
-      <Search locations={locations}/>
+      <Search locations={locations} map={map}/>
       <MapContainer center={center.coords} zoom={4} scrollWheelZoom={false} className="map-map" ref={setMap}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

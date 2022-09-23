@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Search = ({locations}) => {
+const Search = ({locations, map}) => {
 
   const [textSearched, setTextSearched] = useState('');
   const [matches, setMatches] = useState([]);
@@ -18,11 +18,21 @@ const Search = ({locations}) => {
       setMatches(searchResult)
     }
   console.log(matches)
+
+  const flyTo2 = (e) => {
+    e.preventDefault()
+    for(let i = 0; i < locations.length; i++){
+      if(textSearched === locations[i].name.toString()){
+        console.log(map);
+        map.flyTo(locations[i].coords, 14);
+      }
+    }
+  }
   
 
   return (
     <div className='search-section'>
-      <form>
+      <form onSubmit={flyTo2}>
         <input onChange={textUpdate} value={textSearched}/>
         <button>Go</button>
       </form>
@@ -30,7 +40,10 @@ const Search = ({locations}) => {
         {
           matches.map(match => {
             return(
-              <li key={match.id} className='search-match'>
+              <li key={match.id} className='search-match' onClick={()=>{
+                setTextSearched(match.name);
+                setMatches([]);
+                }}>
                 <span>{match.name}</span>
               </li>
             ) 
@@ -38,7 +51,6 @@ const Search = ({locations}) => {
         }
       </ul>
     </div>
-    
   )
 }
 
