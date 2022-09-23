@@ -1,18 +1,44 @@
 import React, { useState } from 'react'
 
-const Search = () => {
-  const [textSearched, setTextSearched] = useState('')
+const Search = ({locations}) => {
 
-  const textUpdate = (e) => {
+  const [textSearched, setTextSearched] = useState('');
+  const [matches, setMatches] = useState([]);
+
+  const textUpdate = e => {
     setTextSearched(e.target.value)
-    console.log(textSearched)
+    filtered(e.target.value)
   }
+    const filtered = (searchTerm) => {
+      var searchResult = locations.filter((location)=>{
+        if(location.name.toString().toLowerCase().includes(searchTerm.toLowerCase())){
+          return location
+        }
+      });
+      setMatches(searchResult)
+    }
+  console.log(matches)
+  
 
   return (
-    <form>
-      <input onChange={e => textUpdate(e)} value={textSearched}/>
-      <button>Go</button>
-    </form>
+    <div className='search-section'>
+      <form>
+        <input onChange={textUpdate} value={textSearched}/>
+        <button>Go</button>
+      </form>
+      <ul className='search-matches'>
+        {
+          matches.map(match => {
+            return(
+              <li key={match.id} className='search-match'>
+                <span>{match.name}</span>
+              </li>
+            ) 
+          })
+        }
+      </ul>
+    </div>
+    
   )
 }
 
