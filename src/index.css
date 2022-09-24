@@ -20,15 +20,25 @@ code {
 .map-window{
   background-color: azure;
   height: 100vh;
+  display: flex;
+}
+
+aside{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .map-window h2{
   margin: 0;
-  padding-top: 15px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 250px;
 }
 
 .map-map{
-  height: 395px;
+  height: 100vh;
+  flex: 1;
 }
 
 .btn{
@@ -42,18 +52,20 @@ code {
 }
 
 .search-section{
-  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 78px;
+  max-height: 300px;
+  min-height: 50px;
+  width: 250px;
 }
 
 .search-section form{
-  margin: 0 20px 0 50px;
-  width: 250px;
+  margin: 0 0px 0 40px;
+  width: 300px;
   display: flex;
   height: 40px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .search-section form button{
@@ -74,15 +86,14 @@ code {
 .search-section form input{
   border: 2px solid lightgray;
   border-radius: 7px;
-  width: 180px;
+  width: 210px;
   font-size: 16px;
+  margin-left: 10px;
 }
 
 .search-matches{
   margin: 0;
   padding: 0;
-  flex: 1;
-  margin-right: 50px;
   text-align: start;
 }
 
@@ -91,8 +102,9 @@ code {
   display: inline-block;
   color: blueviolet;
   font-weight: 400;
-  margin-right: 20px;
   font-size: 14px;
+  margin-left: 10px;
+  min-width: 80px
 }
 
 .search-match:hover{

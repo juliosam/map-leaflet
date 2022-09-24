@@ -7,7 +7,6 @@ import FlyToButton from './flyToButton';
 import Search from './search';
 import Search2 from './search2';
 
-///////////=============usar datos remotos
 delete L.Icon.Default.prototype._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -44,7 +43,7 @@ const locations = [
   {id: 13, name: "Rio Grande" , coords: [23.71594422840233, -102.90808033103946]},
   {id: 14, name: "Poza Rica" , coords: [20.548216555360177, -97.45915332832692]},
   {id: 15, name: "Houston" , coords: [29.68531899090328, -95.41242027481584]},
-  {id: 15, name: "South Padre Island" , coords: [26.090899209291972, -97.16508349460821]}
+  {id: 16, name: "South Padre Island" , coords: [26.090899209291972, -97.16508349460821]}
 ]
 
 
@@ -56,9 +55,11 @@ const MapWindow = ({info}) => {
 
   return (
     <div className="map-window">
-      <h2>JULIO'S JOURNEY</h2>
-      <Search locations={locations} map={map}/>
-      <Search2 info={info} map={map}/>
+      <aside>
+        <h2>JULIO'S JOURNEY</h2>
+        <Search locations={locations} map={map}/>
+        <Search2 info={info} map={map}/>
+      </aside>
       <MapContainer center={center.coords} zoom={4} scrollWheelZoom={false} className="map-map" ref={setMap}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

@@ -33,7 +33,7 @@ const Search2 = ({info, map}) => {  //change
   return (
     <div className='search-section'>
       <form onSubmit={flyTo2}>
-        <input onChange={textUpdate} value={textSearched}/>
+        <input onChange={textUpdate} value={textSearched} placeholder="Search for user's location"/>
         <button>Go</button>
       </form>
       <ul className='search-matches'>
